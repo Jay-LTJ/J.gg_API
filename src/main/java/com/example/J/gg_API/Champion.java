@@ -9,8 +9,9 @@ public class Champion {
     private String championResource;
     private String championAttackType;
     private String championAdaptiveType;
+    private ChampionStats championStats;
 
-    public Champion(String championName, String championTitle, String championFullName, String championIcon, String championResource,String championAttackType, String championAdaptiveType) {
+    public Champion(String championName, String championTitle, String championFullName, String championIcon, String championResource,String championAttackType, String championAdaptiveType, ChampionStats championStats) {
         this.championName = championName;
         this.championTitle = championTitle;
         this.championFullName = championFullName;
@@ -18,6 +19,7 @@ public class Champion {
         this.championResource = championResource;
         this.championAttackType = championAttackType;
         this.championAdaptiveType = championAdaptiveType;
+        this.championStats = championStats;
     }
 
     public String getChampionName() {
@@ -74,5 +76,27 @@ public class Champion {
 
     public void setChampionAdaptiveType(String championAdaptiveType) {
         this.championAdaptiveType = championAdaptiveType;
+    }
+
+    public ChampionStats getChampionStats() {
+        return championStats;
+    }
+
+    public void setChampionStats(ChampionStats championStats) {
+        this.championStats = championStats;
+    }
+
+    @Override
+    public String toString() {
+        return "Champion{" +
+                "championName='" + championName + '\'' +
+                ", championTitle='" + championTitle + '\'' +
+                ", championFullName='" + championFullName + '\'' +
+                ", championIcon='" + championIcon + '\'' +
+                ", championResource='" + championResource + '\'' +
+                ", championAttackType='" + championAttackType + '\'' +
+                ", championAdaptiveType='" + championAdaptiveType + '\'' +
+                ", championStats=" + championStats +
+                '}';
     }
 }
