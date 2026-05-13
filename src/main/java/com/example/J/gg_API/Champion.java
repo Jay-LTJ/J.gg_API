@@ -11,6 +11,8 @@ public class Champion {
     private String championAdaptiveType;
     private ChampionStats championStats;
 
+    public Champion() {}
+
     public Champion(String championName, String championTitle, String championFullName, String championIcon, String championResource,String championAttackType, String championAdaptiveType, ChampionStats championStats) {
         this.championName = championName;
         this.championTitle = championTitle;
