@@ -1,19 +1,58 @@
 package com.example.J.gg_API;
 
+import jakarta.persistence.*;
+
+import java.util.*;
+
+@Entity
+@Table(name="champs")
 public class Champion {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int championId;
+
+    @Column(name = "champname")
     private String championName;
+
+    @Column(name = "champtitle")
     private String championTitle;
+
+    @Column(name = "champfullname")
     private String championFullName;
+
+    @Column(name = "champicon")
     private String championIcon;
+
+    @Column(name = "champresource")
     private String championResource;
+
+    @Column(name = "champattacktype")
     private String championAttackType;
+
+    @Column(name = "champadaptivetype")
     private String championAdaptiveType;
-    private ChampionStats championStats;
+
+    @ManyToMany(cascade =  {CascadeType.ALL})
+    @JoinTable(
+            name = "champ_role",
+            joinColumns = {@JoinColumn(name = "championid")},
+            inverseJoinColumns = {@JoinColumn(name = "roleid")}
+    )
+    Set<roles> roles = new HashSet<roles>();
+
+    @ManyToMany(cascade =  {CascadeType.ALL})
+    @JoinTable(
+            name = "champ_position",
+            joinColumns = {@JoinColumn(name = "championid")},
+            inverseJoinColumns = {@JoinColumn(name = "positionid")}
+    )
+    Set<positions> positionList = new HashSet<positions>();
+
 
     public Champion() {}
 
-    public Champion(String championName, String championTitle, String championFullName, String championIcon, String championResource,String championAttackType, String championAdaptiveType, ChampionStats championStats) {
+    public Champion(String championName, String championTitle, String championFullName, String championIcon, String championResource,String championAttackType, String championAdaptiveType) {
         this.championName = championName;
         this.championTitle = championTitle;
         this.championFullName = championFullName;
@@ -21,7 +60,14 @@ public class Champion {
         this.championResource = championResource;
         this.championAttackType = championAttackType;
         this.championAdaptiveType = championAdaptiveType;
-        this.championStats = championStats;
+    }
+
+    public int getChampionId() {
+        return championId;
+    }
+
+    public void setChampionId(int championId) {
+        this.championId = championId;
     }
 
     public String getChampionName() {
@@ -80,14 +126,6 @@ public class Champion {
         this.championAdaptiveType = championAdaptiveType;
     }
 
-    public ChampionStats getChampionStats() {
-        return championStats;
-    }
-
-    public void setChampionStats(ChampionStats championStats) {
-        this.championStats = championStats;
-    }
-
     @Override
     public String toString() {
         return "Champion{" +
@@ -98,7 +136,6 @@ public class Champion {
                 ", championResource='" + championResource + '\'' +
                 ", championAttackType='" + championAttackType + '\'' +
                 ", championAdaptiveType='" + championAdaptiveType + '\'' +
-                ", championStats=" + championStats +
                 '}';
     }
 }

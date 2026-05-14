@@ -1,63 +1,177 @@
 package com.example.J.gg_API;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "riftstats")
 public class ChampionStats {
 
-    private int championId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int statId;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "championId", nullable = false)
+    private Champion champion;
+
+    @Column(name = "flathp")
     private int flatHP;
+
+    @Column(name = "percenthp")
     private int percentHP;
+
+    @Column(name = "perlevelhp")
     private int perLevelHP;
+
+    @Column(name = "percentlevelhp")
     private int PercentLevelHP;
+
+    @Column(name = "flathpregen")
     private int flatHpRegen;
+
+    @Column(name = "percenthpregen")
     private int percentHpRegen;
+
+    @Column(name = "perlevelhpregen")
     private int perLevelHpRegen;
+
+    @Column(name = "percentlevelhpregen")
     private int PercentLevelHpRegen;
+
+    @Column(name = "flatmana")
     private int flatMana;
+
+    @Column(name = "percentmana")
     private int percentMana;
+
+    @Column(name = "perlevelmana")
     private int perLevelMana;
+
+    @Column(name = "percentlevelmana")
     private int PercentLevelMana;
+
+    @Column(name = "flatmanaregen")
     private int flatManaRegen;
+
+    @Column(name = "percentmanaregen")
     private int percentManaRegen;
+
+    @Column(name = "perlevelmanaregen")
     private int perLevelManaRegen;
+
+    @Column(name = "percentlevelmanaregen")
     private int PercentLevelManaRegen;
+
+    @Column(name = "flatarmour")
     private int flatArmour;
+
+    @Column(name = "percentarmour")
     private int percentArmour;
+
+    @Column(name = "perlevelarmour")
     private int perLevelArmour;
+
+    @Column(name = "percentlevelarmour")
     private int PercentLevelArmour;
+
+    @Column(name = "flatmagicresistance")
     private int flatMagicResistance;
+
+    @Column(name = "percentmagicresistance")
     private int percentMagicResistance;
+
+    @Column(name = "perlevelmagicresistance")
     private int perLevelMagicResistance;
+
+    @Column(name = "percentlevelmagicresistance")
     private int PercentLevelMagicResistance;
+
+    @Column(name = "flatattackdamage")
     private int flatAttackDamage;
+
+    @Column(name = "percentattackdamage")
     private int percentAttackDamage;
+
+    @Column(name = "perlevelattackdamage")
     private int perLevelAttackDamage;
+
+    @Column(name = "percentlevelattackdamage")
     private int PercentLevelAttackDamage;
+
+    @Column(name = "flatmovemenetspeed")
     private int flatMovementSpeed;
+
+    @Column(name = "percentmovemenetspeed")
     private int percentMovementSpeed;
+
+    @Column(name = "perlevelmovemenetspeed")
     private int perLevelMovementSpeed;
+
+    @Column(name = "percentlevelmovemenetspeed")
     private int PercentLevelMovementSpeed;
+
+    @Column(name = "flatcritdamage")
     private int flatCritDamage;
+
+    @Column(name = "percentcritdamage")
     private int percentCritDamage;
+
+    @Column(name = "perlevelcritdamage")
     private int perLevelCritDamage;
+
+    @Column(name = "percentlevelcritdamage")
     private int PercentLevelCritDamage;
+
+    @Column(name = "flatcritdamagemod")
     private int flatCritDamageMod;
+
+    @Column(name = "percentcritdamagemod")
     private int percentCritDamageMod;
+
+    @Column(name = "perlevelcritdamagemod")
     private int perLevelCritDamageMod;
+
+    @Column(name = "percentlevelcritdamagemod")
     private int PercentLevelCritDamageMod;
+
+    @Column(name = "flatattackspeed")
     private int flatAttackSpeed;
+
+    @Column(name = "percentattackspeed")
     private int percentAttackSpeed;
+
+    @Column(name = "perlevelattackspeed")
     private int perLevelAttackSpeed;
+
+    @Column(name = "percentlevelattackspeed")
     private int PercentLevelAttackSpeed;
+
+    @Column(name = "flatattackspeedratio")
     private int flatAttackSpeedRatio;
+
+    @Column(name = "percentattackspeedratio")
     private int percentAttackSpeedRatio;
+
+    @Column(name = "perlevelattackspeedratio")
     private int perLevelAttackSpeedRatio;
+
+    @Column(name = "percentlevelattackspeedratio")
     private int PercentLevelAttackSpeedRatio;
+
+    @Column(name = "flatattackrange")
     private int flatAttackRange;
+
+    @Column(name = "percentattackrange")
     private int percentAttackRange;
+
+    @Column(name = "perlevelattackrange")
     private int perLevelAttackRange;
+
+    @Column(name = "percentlevelattackrange")
     private int PercentLevelAttackRange;
 
-    public ChampionStats(int championId, int flatHP, int percentHP, int perLevelHP, int percentLevelHP, int flatHpRegen, int percentHpRegen, int perLevelHpRegen, int percentLevelHpRegen, int flatMana, int percentMana, int percentLevelMana, int perLevelMana, int flatManaRegen, int percentManaRegen, int perLevelManaRegen, int percentLevelManaRegen, int flatArmour, int percentArmour, int perLevelArmour, int percentLevelArmour, int flatMagicResistance, int percentMagicResistance, int perLevelMagicResistance, int percentLevelMagicResistance, int flatAttackDamage, int percentAttackDamage, int perLevelAttackDamage, int percentLevelAttackDamage, int flatMovementSpeed, int perLevelMovementSpeed, int percentMovementSpeed, int percentLevelMovementSpeed, int flatCritDamage, int percentCritDamage, int perLevelCritDamage, int percentLevelCritDamage, int flatCritDamageMod, int percentCritDamageMod, int perLevelCritDamageMod, int percentLevelCritDamageMod, int flatAttackSpeed, int percentAttackSpeed, int perLevelAttackSpeed, int percentLevelAttackSpeed, int flatAttackSpeedRatio, int percentAttackSpeedRatio, int perLevelAttackSpeedRatio, int percentLevelAttackSpeedRatio, int flatAttackRange, int percentAttackRange, int perLevelAttackRange, int percentLevelAttackRange) {
-        this.championId = championId;
+    public ChampionStats( int flatHP, int percentHP, int perLevelHP, int percentLevelHP, int flatHpRegen, int percentHpRegen, int perLevelHpRegen, int percentLevelHpRegen, int flatMana, int percentMana, int percentLevelMana, int perLevelMana, int flatManaRegen, int percentManaRegen, int perLevelManaRegen, int percentLevelManaRegen, int flatArmour, int percentArmour, int perLevelArmour, int percentLevelArmour, int flatMagicResistance, int percentMagicResistance, int perLevelMagicResistance, int percentLevelMagicResistance, int flatAttackDamage, int percentAttackDamage, int perLevelAttackDamage, int percentLevelAttackDamage, int flatMovementSpeed, int perLevelMovementSpeed, int percentMovementSpeed, int percentLevelMovementSpeed, int flatCritDamage, int percentCritDamage, int perLevelCritDamage, int percentLevelCritDamage, int flatCritDamageMod, int percentCritDamageMod, int perLevelCritDamageMod, int percentLevelCritDamageMod, int flatAttackSpeed, int percentAttackSpeed, int perLevelAttackSpeed, int percentLevelAttackSpeed, int flatAttackSpeedRatio, int percentAttackSpeedRatio, int perLevelAttackSpeedRatio, int percentLevelAttackSpeedRatio, int flatAttackRange, int percentAttackRange, int perLevelAttackRange, int percentLevelAttackRange) {
+
         this.flatHP = flatHP;
         this.percentHP = percentHP;
         this.perLevelHP = perLevelHP;
@@ -115,7 +229,7 @@ public class ChampionStats {
     @Override
     public String toString() {
         return "ChampionStats{" +
-                "championId=" + championId +
+                "championName=" + champion.getChampionName() +
                 ", flatHP=" + flatHP +
                 ", percentHP=" + percentHP +
                 ", perLevelHP=" + perLevelHP +
@@ -180,11 +294,7 @@ public class ChampionStats {
     }
 
     public int getChampionId() {
-        return championId;
-    }
-
-    public void setChampionId(int championId) {
-        this.championId = championId;
+        return champion.getChampionId();
     }
 
     public int getPercentHP() {
