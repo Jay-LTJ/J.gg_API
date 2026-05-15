@@ -9,6 +9,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+//Class to access meraki analystics lol static data database
 public class LolStaticDataConnection {
 
     private final String link;
