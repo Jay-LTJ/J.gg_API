@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.io.IOException;
 import java.net.URI;
 
 @RestController
@@ -15,8 +16,13 @@ public class ChampionController {
     private ChampionDAO championDAO;
 
     @GetMapping("/")
-    public ChampionList getAllChampions() {
+    public ChampionList getAllChampions() throws IOException, InterruptedException {
 
         return championDAO.getAllChampions();
+    }
+
+    @GetMapping("/item")
+    public void test()throws IOException, InterruptedException {
+        championDAO.getItems();
     }
 }
