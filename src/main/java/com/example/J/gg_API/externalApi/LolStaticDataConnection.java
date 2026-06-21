@@ -1,5 +1,6 @@
-package com.example.J.gg_API;
+package com.example.J.gg_API.externalApi;
 
+import org.springframework.stereotype.Repository;
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;
 
@@ -10,6 +11,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 //Class to access meraki analystics lol static data database
+@Repository
 public class LolStaticDataConnection {
 
     private final String link;
@@ -30,7 +32,7 @@ public class LolStaticDataConnection {
         HttpRequest request = HttpRequest.newBuilder().uri(URI.create(urlLink)).GET().build();
         HttpResponse<String> responce = client.send(request, HttpResponse.BodyHandlers.ofString());
         String temp = responce.body();
-        System.out.println(objectMapper.readTree(temp));
+
         return objectMapper.readTree(temp);
     }
 

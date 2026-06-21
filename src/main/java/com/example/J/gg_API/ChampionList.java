@@ -1,5 +1,7 @@
 package com.example.J.gg_API;
 
+import com.example.J.gg_API.entity.Champion;
+
 import java.util.ArrayList;
 import java.util.List;
 

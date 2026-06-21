@@ -1,4 +1,4 @@
-package com.example.J.gg_API;
+package com.example.J.gg_API.entity;
 
 import jakarta.persistence.*;
 
