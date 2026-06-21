@@ -96,7 +96,18 @@ public class ChampionService {
         return championList;
     }
 
+    public  void clearChampions() throws IOException, InterruptedException {
+        System.out.println("clearChampions");
 
+        try{
+            championRepository.deleteAll();
+            System.out.println("champion table cleared");
+        }catch(Exception e){
+            System.out.println("clearChampions error: " + e.getMessage());
+        }
+
+
+    }
 
 
 }

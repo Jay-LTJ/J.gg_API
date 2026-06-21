@@ -36,4 +36,10 @@ public class ChampionController {
         System.out.println("setChampions");
         championService.setChampionsDb();
     }
+
+    @GetMapping("/clear")
+    public void clearChampions() throws IOException, InterruptedException {
+        System.out.println("clearChampions");
+        championService.clearChampions();
+    }
 }
