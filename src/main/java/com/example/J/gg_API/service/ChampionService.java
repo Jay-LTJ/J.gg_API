@@ -1,26 +1,33 @@
 package com.example.J.gg_API.service;
 
 import com.example.J.gg_API.ChampionList;
-import com.example.J.gg_API.entity.Champion;
-import com.example.J.gg_API.entity.version;
+import com.example.J.gg_API.entity.*;
 import com.example.J.gg_API.externalApi.LolStaticDataConnection;
 import com.example.J.gg_API.repositories.championRepository;
+import com.example.J.gg_API.repositories.championStatsRepository;
 import org.springframework.stereotype.Service;
 import tools.jackson.databind.JsonNode;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class ChampionService {
 
     private static ChampionList champions;
     private final LolStaticDataConnection lolStaticDataConnection;
-    private final versionService versionService;
+    private final VersionService versionService;
     private final championRepository championRepository;
+    private final ChampionStatsService championStatsService;
+    private final PositionsService positionsService;
+    private final RolesService rolesService;
 
-    public ChampionService(LolStaticDataConnection lolStaticDataConnection, versionService versionService, championRepository championRepository) {
+    public ChampionService(LolStaticDataConnection lolStaticDataConnection, VersionService versionService, championRepository championRepository, ChampionStatsService championStatsService, PositionsService positionsService, RolesService rolesService) {
+        this.championStatsService = championStatsService;
+        this.positionsService = positionsService;
+        this.rolesService = rolesService;
         this.lolStaticDataConnection = new LolStaticDataConnection();
         this.versionService = versionService;
         this.championRepository = championRepository;
@@ -39,19 +46,6 @@ public class ChampionService {
         JsonNode temp = lolStaticDataConnection.getItemListJson();
     }
 
-    public void updateChampionsDb() throws IOException, InterruptedException {
-        System.out.println("updateChampionsDb");
-
-
-        if(!versionService.versionCheck()){
-            versionService.updateVersion();
-        }
-
-        List<Champion> championList = champStaticDataToClasses();
-
-
-    }
-
     public void setChampionsDb() throws IOException, InterruptedException {
         System.out.println("setChampionsDb");
 
@@ -59,28 +53,38 @@ public class ChampionService {
             versionService.updateVersion();
         }
 
-        List<Champion> championList = champStaticDataToClasses();
+        JsonNode championJson = lolStaticDataConnection.getChampionListJson();
 
-        try{
-            championRepository.saveAll(championList);
-            System.out.println("championList Set");
-        }catch(Exception e){
-            System.out.println("setChampionsDb error: " + e.getMessage());
-        }
+        List<Champion> championList = lolJsonToChampList(championJson);
+
+        saveChampionList(championList);
+
+//        List<ChampionStats> championStatsList = championStatsService.lolJsonToChampStats(championJson,championList);
+//        championStatsService.saveStatList(championStatsList);
+//
+//        Set<String> positionSet = positionsService.jsonToPositionSet(championJson);
+//        List<positions> positionList = positionsService.positionSetToList(positionSet);
+//        positionsService.savePositionList(positionList);
+//
+//        Set<String> roleSet = rolesService.jsonToRolesSet(championJson);
+//        List<roles> rolesList = rolesService.rolesSetToList(roleSet);
+//        rolesService.saveRoleList(rolesList);
+
+
 
 
 
     }
 
-    private List<Champion> champStaticDataToClasses() throws IOException, InterruptedException {
-        System.out.println("champStaticDataToClasses");
-
-        JsonNode championListJson = lolStaticDataConnection.getChampionListJson();
-
+    private List<Champion> lolJsonToChampList(JsonNode championListJson) throws IOException, InterruptedException {
+        System.out.println("lolJsonToChampList");
 
         List<Champion> championList = new ArrayList<>();
 
+
         for(JsonNode championJson : championListJson){
+
+            System.out.println("championJson: " + championJson);
 
             Champion champion = new Champion(championJson.get("name").asString(),
                     championJson.get("title").asString(),
@@ -88,12 +92,66 @@ public class ChampionService {
                     championJson.get("icon").asString(),
                     championJson.get("resource").asString(),
                     championJson.get("attackType").asString(),
-                    championJson.get("adaptiveType").asString());
-
+                    championJson.get("adaptiveType").asString()
+            );
 
             championList.add(champion);
+
+
+            //positionsList.add(championJson.get("positions").asString());
+
+//            for(int i = 0 ;  i < championJson.get("roles").size(); i++){
+//
+//                rolesList.add(championJson.get("roles").get(i).asString());
+//
+//            }
+
+
+
+
+
+
+
+//            for(roles currentRole : rolesList){
+//
+//            }
+
+
+
         }
+
         return championList;
+
+    }
+
+    private void saveChampionList(List<Champion> championList) throws IOException, InterruptedException {
+        System.out.println("saveChampionList");
+
+        championRepository.saveAll(championList);
+
+    }
+
+
+    public List<ChampionStats> champStaticDataToStats() throws IOException, InterruptedException {
+        System.out.println("champStaticDatatoStats");
+
+        JsonNode championListJson = lolStaticDataConnection.getChampionListJson();
+
+        List<ChampionStats> championStatsList = new ArrayList<>();
+
+        for(JsonNode championJson : championListJson){
+
+            System.out.println("championJson: " + championJson);
+
+            System.out.println("championStatsList: " + championJson.get("stats").get("health").get("flat").asString());
+
+
+
+        }
+
+
+        return championStatsList;
+
     }
 
     public  void clearChampions() throws IOException, InterruptedException {
@@ -108,6 +166,12 @@ public class ChampionService {
 
 
     }
+
+    public void resetChampIDs() throws IOException, InterruptedException {
+        System.out.println("resetChampIDs");
+        championRepository.resetChampIDs();
+    }
+
 
 
 }

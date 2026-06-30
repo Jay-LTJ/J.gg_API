@@ -36,7 +36,7 @@ public class Champion {
     @ManyToMany(cascade =  {CascadeType.ALL})
     @JoinTable(
             name = "champ_role",
-            joinColumns = {@JoinColumn(name = "championid")},
+            joinColumns = {@JoinColumn(name = "champid")},
             inverseJoinColumns = {@JoinColumn(name = "roleid")}
     )
     Set<roles> roles = new HashSet<roles>();
@@ -44,10 +44,12 @@ public class Champion {
     @ManyToMany(cascade =  {CascadeType.ALL})
     @JoinTable(
             name = "champ_position",
-            joinColumns = {@JoinColumn(name = "championid")},
+            joinColumns = {@JoinColumn(name = "champid")},
             inverseJoinColumns = {@JoinColumn(name = "positionid")}
     )
     Set<positions> positionList = new HashSet<positions>();
+
+
 
 
     public Champion() {}
@@ -60,7 +62,10 @@ public class Champion {
         this.championResource = championResource;
         this.championAttackType = championAttackType;
         this.championAdaptiveType = championAdaptiveType;
+
     }
+
+
 
     public int getChampionId() {
         return championId;

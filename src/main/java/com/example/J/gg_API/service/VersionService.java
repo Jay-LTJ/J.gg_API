@@ -9,12 +9,12 @@ import java.io.IOException;
 import java.util.List;
 
 @Service
-public class versionService {
+public class VersionService {
 
     private final versionRepository versionRepository;
     private final communityDragonConnection dragonConnection;
 
-    public versionService(versionRepository versionRepository, communityDragonConnection dragonConnection) {
+    public VersionService(versionRepository versionRepository, communityDragonConnection dragonConnection) {
         this.versionRepository = versionRepository;
         this.dragonConnection = dragonConnection;
     }

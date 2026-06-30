@@ -21,8 +21,8 @@ public class positions {
 
     public positions() {}
 
-    public positions(int positionId, String positionName) {
-        this.positionId = positionId;
+    public positions( String positionName) {
+
         this.positionName = positionName;
     }
 

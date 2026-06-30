@@ -20,9 +20,9 @@ public class roles {
 
     public roles() {}
 
-    public roles(String roleName, int roleId) {
+    public roles(String roleName) {
         this.roleName = roleName;
-        this.roleId = roleId;
+
     }
 
     public int getRoleId() {

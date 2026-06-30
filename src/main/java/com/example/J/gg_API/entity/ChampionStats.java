@@ -10,167 +10,173 @@ public class ChampionStats {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int statId;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "championId", nullable = false)
-    private Champion champion;
+
 
     @Column(name = "flathp")
-    private int flatHP;
+    private float flatHP;
 
     @Column(name = "percenthp")
-    private int percentHP;
+    private float percentHP;
 
     @Column(name = "perlevelhp")
-    private int perLevelHP;
+    private float perLevelHP;
 
     @Column(name = "percentlevelhp")
-    private int PercentLevelHP;
+    private float PercentLevelHP;
 
     @Column(name = "flathpregen")
-    private int flatHpRegen;
+    private float flatHpRegen;
 
     @Column(name = "percenthpregen")
-    private int percentHpRegen;
+    private float percentHpRegen;
 
     @Column(name = "perlevelhpregen")
-    private int perLevelHpRegen;
+    private float perLevelHpRegen;
 
     @Column(name = "percentlevelhpregen")
-    private int PercentLevelHpRegen;
+    private float PercentLevelHpRegen;
 
     @Column(name = "flatmana")
-    private int flatMana;
+    private float flatMana;
 
     @Column(name = "percentmana")
-    private int percentMana;
+    private float percentMana;
 
     @Column(name = "perlevelmana")
-    private int perLevelMana;
+    private float perLevelMana;
 
     @Column(name = "percentlevelmana")
-    private int PercentLevelMana;
+    private float PercentLevelMana;
 
     @Column(name = "flatmanaregen")
-    private int flatManaRegen;
+    private float flatManaRegen;
 
     @Column(name = "percentmanaregen")
-    private int percentManaRegen;
+    private float percentManaRegen;
 
     @Column(name = "perlevelmanaregen")
-    private int perLevelManaRegen;
+    private float perLevelManaRegen;
 
     @Column(name = "percentlevelmanaregen")
-    private int PercentLevelManaRegen;
+    private float PercentLevelManaRegen;
 
     @Column(name = "flatarmour")
-    private int flatArmour;
+    private float flatArmour;
 
     @Column(name = "percentarmour")
-    private int percentArmour;
+    private float percentArmour;
 
     @Column(name = "perlevelarmour")
-    private int perLevelArmour;
+    private float perLevelArmour;
 
     @Column(name = "percentlevelarmour")
-    private int PercentLevelArmour;
+    private float PercentLevelArmour;
 
     @Column(name = "flatmagicresistance")
-    private int flatMagicResistance;
+    private float flatMagicResistance;
 
     @Column(name = "percentmagicresistance")
-    private int percentMagicResistance;
+    private float percentMagicResistance;
 
     @Column(name = "perlevelmagicresistance")
-    private int perLevelMagicResistance;
+    private float perLevelMagicResistance;
 
     @Column(name = "percentlevelmagicresistance")
-    private int PercentLevelMagicResistance;
+    private float PercentLevelMagicResistance;
 
     @Column(name = "flatattackdamage")
-    private int flatAttackDamage;
+    private float flatAttackDamage;
 
     @Column(name = "percentattackdamage")
-    private int percentAttackDamage;
+    private float percentAttackDamage;
 
     @Column(name = "perlevelattackdamage")
-    private int perLevelAttackDamage;
+    private float perLevelAttackDamage;
 
     @Column(name = "percentlevelattackdamage")
-    private int PercentLevelAttackDamage;
+    private float PercentLevelAttackDamage;
 
     @Column(name = "flatmovemenetspeed")
-    private int flatMovementSpeed;
+    private float flatMovementSpeed;
 
     @Column(name = "percentmovemenetspeed")
-    private int percentMovementSpeed;
+    private float percentMovementSpeed;
 
     @Column(name = "perlevelmovemenetspeed")
-    private int perLevelMovementSpeed;
+    private float perLevelMovementSpeed;
 
     @Column(name = "percentlevelmovemenetspeed")
-    private int PercentLevelMovementSpeed;
+    private float PercentLevelMovementSpeed;
 
     @Column(name = "flatcritdamage")
-    private int flatCritDamage;
+    private float flatCritDamage;
 
     @Column(name = "percentcritdamage")
-    private int percentCritDamage;
+    private float percentCritDamage;
 
     @Column(name = "perlevelcritdamage")
-    private int perLevelCritDamage;
+    private float perLevelCritDamage;
 
     @Column(name = "percentlevelcritdamage")
-    private int PercentLevelCritDamage;
+    private float PercentLevelCritDamage;
 
     @Column(name = "flatcritdamagemod")
-    private int flatCritDamageMod;
+    private float flatCritDamageMod;
 
     @Column(name = "percentcritdamagemod")
-    private int percentCritDamageMod;
+    private float percentCritDamageMod;
 
     @Column(name = "perlevelcritdamagemod")
-    private int perLevelCritDamageMod;
+    private float perLevelCritDamageMod;
 
     @Column(name = "percentlevelcritdamagemod")
-    private int PercentLevelCritDamageMod;
+    private float PercentLevelCritDamageMod;
 
     @Column(name = "flatattackspeed")
-    private int flatAttackSpeed;
+    private float flatAttackSpeed;
 
     @Column(name = "percentattackspeed")
-    private int percentAttackSpeed;
+    private float percentAttackSpeed;
 
     @Column(name = "perlevelattackspeed")
-    private int perLevelAttackSpeed;
+    private float perLevelAttackSpeed;
 
     @Column(name = "percentlevelattackspeed")
-    private int PercentLevelAttackSpeed;
+    private float PercentLevelAttackSpeed;
 
     @Column(name = "flatattackspeedratio")
-    private int flatAttackSpeedRatio;
+    private float flatAttackSpeedRatio;
 
     @Column(name = "percentattackspeedratio")
-    private int percentAttackSpeedRatio;
+    private float percentAttackSpeedRatio;
 
     @Column(name = "perlevelattackspeedratio")
-    private int perLevelAttackSpeedRatio;
+    private float perLevelAttackSpeedRatio;
 
     @Column(name = "percentlevelattackspeedratio")
-    private int PercentLevelAttackSpeedRatio;
+    private float PercentLevelAttackSpeedRatio;
 
     @Column(name = "flatattackrange")
-    private int flatAttackRange;
+    private float flatAttackRange;
 
     @Column(name = "percentattackrange")
-    private int percentAttackRange;
+    private float percentAttackRange;
 
     @Column(name = "perlevelattackrange")
-    private int perLevelAttackRange;
+    private float perLevelAttackRange;
 
     @Column(name = "percentlevelattackrange")
-    private int PercentLevelAttackRange;
+    private float PercentLevelAttackRange;
 
-    public ChampionStats( int flatHP, int percentHP, int perLevelHP, int percentLevelHP, int flatHpRegen, int percentHpRegen, int perLevelHpRegen, int percentLevelHpRegen, int flatMana, int percentMana, int percentLevelMana, int perLevelMana, int flatManaRegen, int percentManaRegen, int perLevelManaRegen, int percentLevelManaRegen, int flatArmour, int percentArmour, int perLevelArmour, int percentLevelArmour, int flatMagicResistance, int percentMagicResistance, int perLevelMagicResistance, int percentLevelMagicResistance, int flatAttackDamage, int percentAttackDamage, int perLevelAttackDamage, int percentLevelAttackDamage, int flatMovementSpeed, int perLevelMovementSpeed, int percentMovementSpeed, int percentLevelMovementSpeed, int flatCritDamage, int percentCritDamage, int perLevelCritDamage, int percentLevelCritDamage, int flatCritDamageMod, int percentCritDamageMod, int perLevelCritDamageMod, int percentLevelCritDamageMod, int flatAttackSpeed, int percentAttackSpeed, int perLevelAttackSpeed, int percentLevelAttackSpeed, int flatAttackSpeedRatio, int percentAttackSpeedRatio, int perLevelAttackSpeedRatio, int percentLevelAttackSpeedRatio, int flatAttackRange, int percentAttackRange, int perLevelAttackRange, int percentLevelAttackRange) {
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "championId", nullable = false)
+    private Champion Champion;
+
+    public ChampionStats() {}
+
+
+
+    public ChampionStats(float flatHP, float percentHP, float perLevelHP, float percentLevelHP, float flatHpRegen, float percentHpRegen, float perLevelHpRegen, float percentLevelHpRegen, float flatMana, float percentMana, float perLevelMana, float percentLevelMana, float flatManaRegen, float percentManaRegen, float perLevelManaRegen, float percentLevelManaRegen, float flatArmour, float percentArmour, float perLevelArmour, float percentLevelArmour, float flatMagicResistance, float percentMagicResistance, float perLevelMagicResistance, float percentLevelMagicResistance, float flatAttackDamage, float percentAttackDamage, float perLevelAttackDamage, float percentLevelAttackDamage, float flatMovementSpeed, float percentMovementSpeed, float perLevelMovementSpeed, float percentLevelMovementSpeed, float flatCritDamage, float percentCritDamage, float perLevelCritDamage, float percentLevelCritDamage, float flatCritDamageMod, float percentCritDamageMod, float perLevelCritDamageMod, float percentLevelCritDamageMod, float flatAttackSpeed, float percentAttackSpeed, float perLevelAttackSpeed, float percentLevelAttackSpeed, float flatAttackSpeedRatio, float percentAttackSpeedRatio, float perLevelAttackSpeedRatio, float percentLevelAttackSpeedRatio, float flatAttackRange, float percentAttackRange, float perLevelAttackRange, float percentLevelAttackRange, Champion champion) {
 
         this.flatHP = flatHP;
         this.percentHP = percentHP;
@@ -182,8 +188,8 @@ public class ChampionStats {
         PercentLevelHpRegen = percentLevelHpRegen;
         this.flatMana = flatMana;
         this.percentMana = percentMana;
-        PercentLevelMana = percentLevelMana;
         this.perLevelMana = perLevelMana;
+        PercentLevelMana = percentLevelMana;
         this.flatManaRegen = flatManaRegen;
         this.percentManaRegen = percentManaRegen;
         this.perLevelManaRegen = perLevelManaRegen;
@@ -201,8 +207,8 @@ public class ChampionStats {
         this.perLevelAttackDamage = perLevelAttackDamage;
         PercentLevelAttackDamage = percentLevelAttackDamage;
         this.flatMovementSpeed = flatMovementSpeed;
-        this.perLevelMovementSpeed = perLevelMovementSpeed;
         this.percentMovementSpeed = percentMovementSpeed;
+        this.perLevelMovementSpeed = perLevelMovementSpeed;
         PercentLevelMovementSpeed = percentLevelMovementSpeed;
         this.flatCritDamage = flatCritDamage;
         this.percentCritDamage = percentCritDamage;
@@ -224,12 +230,448 @@ public class ChampionStats {
         this.percentAttackRange = percentAttackRange;
         this.perLevelAttackRange = perLevelAttackRange;
         PercentLevelAttackRange = percentLevelAttackRange;
+        this.Champion = champion;
+    }
+
+    public Champion getChampion() {
+        return Champion;
+    }
+
+    public void setChampion(Champion champion) {
+        Champion = champion;
+    }
+
+    public int getStatId() {
+        return statId;
+    }
+
+    public void setStatId(int statId) {
+        this.statId = statId;
+    }
+
+
+
+
+
+    public float getFlatHP() {
+        return flatHP;
+    }
+
+    public void setFlatHP(float flatHP) {
+        this.flatHP = flatHP;
+    }
+
+    public float getPerLevelHP() {
+        return perLevelHP;
+    }
+
+    public void setPerLevelHP(float perLevelHP) {
+        this.perLevelHP = perLevelHP;
+    }
+
+    public float getPercentHP() {
+        return percentHP;
+    }
+
+    public void setPercentHP(float percentHP) {
+        this.percentHP = percentHP;
+    }
+
+    public float getPercentLevelHP() {
+        return PercentLevelHP;
+    }
+
+    public void setPercentLevelHP(float percentLevelHP) {
+        PercentLevelHP = percentLevelHP;
+    }
+
+    public float getFlatHpRegen() {
+        return flatHpRegen;
+    }
+
+    public void setFlatHpRegen(float flatHpRegen) {
+        this.flatHpRegen = flatHpRegen;
+    }
+
+    public float getPercentHpRegen() {
+        return percentHpRegen;
+    }
+
+    public void setPercentHpRegen(float percentHpRegen) {
+        this.percentHpRegen = percentHpRegen;
+    }
+
+    public float getPerLevelHpRegen() {
+        return perLevelHpRegen;
+    }
+
+    public void setPerLevelHpRegen(float perLevelHpRegen) {
+        this.perLevelHpRegen = perLevelHpRegen;
+    }
+
+    public float getFlatMana() {
+        return flatMana;
+    }
+
+    public void setFlatMana(float flatMana) {
+        this.flatMana = flatMana;
+    }
+
+    public float getPercentLevelHpRegen() {
+        return PercentLevelHpRegen;
+    }
+
+    public void setPercentLevelHpRegen(float percentLevelHpRegen) {
+        PercentLevelHpRegen = percentLevelHpRegen;
+    }
+
+    public float getPercentMana() {
+        return percentMana;
+    }
+
+    public void setPercentMana(float percentMana) {
+        this.percentMana = percentMana;
+    }
+
+    public float getPerLevelMana() {
+        return perLevelMana;
+    }
+
+    public void setPerLevelMana(float perLevelMana) {
+        this.perLevelMana = perLevelMana;
+    }
+
+    public float getPercentLevelMana() {
+        return PercentLevelMana;
+    }
+
+    public void setPercentLevelMana(float percentLevelMana) {
+        PercentLevelMana = percentLevelMana;
+    }
+
+    public float getFlatManaRegen() {
+        return flatManaRegen;
+    }
+
+    public void setFlatManaRegen(float flatManaRegen) {
+        this.flatManaRegen = flatManaRegen;
+    }
+
+    public float getPercentManaRegen() {
+        return percentManaRegen;
+    }
+
+    public void setPercentManaRegen(float percentManaRegen) {
+        this.percentManaRegen = percentManaRegen;
+    }
+
+    public float getPerLevelManaRegen() {
+        return perLevelManaRegen;
+    }
+
+    public void setPerLevelManaRegen(float perLevelManaRegen) {
+        this.perLevelManaRegen = perLevelManaRegen;
+    }
+
+    public float getPercentLevelManaRegen() {
+        return PercentLevelManaRegen;
+    }
+
+    public void setPercentLevelManaRegen(float percentLevelManaRegen) {
+        PercentLevelManaRegen = percentLevelManaRegen;
+    }
+
+    public float getFlatArmour() {
+        return flatArmour;
+    }
+
+    public void setFlatArmour(float flatArmour) {
+        this.flatArmour = flatArmour;
+    }
+
+    public float getPercentArmour() {
+        return percentArmour;
+    }
+
+    public void setPercentArmour(float percentArmour) {
+        this.percentArmour = percentArmour;
+    }
+
+    public float getPerLevelArmour() {
+        return perLevelArmour;
+    }
+
+    public void setPerLevelArmour(float perLevelArmour) {
+        this.perLevelArmour = perLevelArmour;
+    }
+
+    public float getPercentLevelArmour() {
+        return PercentLevelArmour;
+    }
+
+    public void setPercentLevelArmour(float percentLevelArmour) {
+        PercentLevelArmour = percentLevelArmour;
+    }
+
+    public float getFlatMagicResistance() {
+        return flatMagicResistance;
+    }
+
+    public void setFlatMagicResistance(float flatMagicResistance) {
+        this.flatMagicResistance = flatMagicResistance;
+    }
+
+    public float getPercentMagicResistance() {
+        return percentMagicResistance;
+    }
+
+    public void setPercentMagicResistance(float percentMagicResistance) {
+        this.percentMagicResistance = percentMagicResistance;
+    }
+
+    public float getPerLevelMagicResistance() {
+        return perLevelMagicResistance;
+    }
+
+    public void setPerLevelMagicResistance(float perLevelMagicResistance) {
+        this.perLevelMagicResistance = perLevelMagicResistance;
+    }
+
+    public float getPercentLevelMagicResistance() {
+        return PercentLevelMagicResistance;
+    }
+
+    public void setPercentLevelMagicResistance(float percentLevelMagicResistance) {
+        PercentLevelMagicResistance = percentLevelMagicResistance;
+    }
+
+    public float getFlatAttackDamage() {
+        return flatAttackDamage;
+    }
+
+    public void setFlatAttackDamage(float flatAttackDamage) {
+        this.flatAttackDamage = flatAttackDamage;
+    }
+
+    public float getPercentAttackDamage() {
+        return percentAttackDamage;
+    }
+
+    public void setPercentAttackDamage(float percentAttackDamage) {
+        this.percentAttackDamage = percentAttackDamage;
+    }
+
+    public float getPerLevelAttackDamage() {
+        return perLevelAttackDamage;
+    }
+
+    public void setPerLevelAttackDamage(float perLevelAttackDamage) {
+        this.perLevelAttackDamage = perLevelAttackDamage;
+    }
+
+    public float getPercentLevelAttackDamage() {
+        return PercentLevelAttackDamage;
+    }
+
+    public void setPercentLevelAttackDamage(float percentLevelAttackDamage) {
+        PercentLevelAttackDamage = percentLevelAttackDamage;
+    }
+
+    public float getFlatMovementSpeed() {
+        return flatMovementSpeed;
+    }
+
+    public void setFlatMovementSpeed(float flatMovementSpeed) {
+        this.flatMovementSpeed = flatMovementSpeed;
+    }
+
+    public float getPercentMovementSpeed() {
+        return percentMovementSpeed;
+    }
+
+    public void setPercentMovementSpeed(float percentMovementSpeed) {
+        this.percentMovementSpeed = percentMovementSpeed;
+    }
+
+    public float getPerLevelMovementSpeed() {
+        return perLevelMovementSpeed;
+    }
+
+    public void setPerLevelMovementSpeed(float perLevelMovementSpeed) {
+        this.perLevelMovementSpeed = perLevelMovementSpeed;
+    }
+
+    public float getPercentLevelMovementSpeed() {
+        return PercentLevelMovementSpeed;
+    }
+
+    public void setPercentLevelMovementSpeed(float percentLevelMovementSpeed) {
+        PercentLevelMovementSpeed = percentLevelMovementSpeed;
+    }
+
+    public float getFlatCritDamage() {
+        return flatCritDamage;
+    }
+
+    public void setFlatCritDamage(float flatCritDamage) {
+        this.flatCritDamage = flatCritDamage;
+    }
+
+    public float getPercentCritDamage() {
+        return percentCritDamage;
+    }
+
+    public void setPercentCritDamage(float percentCritDamage) {
+        this.percentCritDamage = percentCritDamage;
+    }
+
+    public float getPerLevelCritDamage() {
+        return perLevelCritDamage;
+    }
+
+    public void setPerLevelCritDamage(float perLevelCritDamage) {
+        this.perLevelCritDamage = perLevelCritDamage;
+    }
+
+    public float getPercentLevelCritDamage() {
+        return PercentLevelCritDamage;
+    }
+
+    public void setPercentLevelCritDamage(float percentLevelCritDamage) {
+        PercentLevelCritDamage = percentLevelCritDamage;
+    }
+
+    public float getFlatCritDamageMod() {
+        return flatCritDamageMod;
+    }
+
+    public void setFlatCritDamageMod(float flatCritDamageMod) {
+        this.flatCritDamageMod = flatCritDamageMod;
+    }
+
+    public float getPercentCritDamageMod() {
+        return percentCritDamageMod;
+    }
+
+    public void setPercentCritDamageMod(float percentCritDamageMod) {
+        this.percentCritDamageMod = percentCritDamageMod;
+    }
+
+    public float getPerLevelCritDamageMod() {
+        return perLevelCritDamageMod;
+    }
+
+    public void setPerLevelCritDamageMod(float perLevelCritDamageMod) {
+        this.perLevelCritDamageMod = perLevelCritDamageMod;
+    }
+
+    public float getPercentLevelCritDamageMod() {
+        return PercentLevelCritDamageMod;
+    }
+
+    public void setPercentLevelCritDamageMod(float percentLevelCritDamageMod) {
+        PercentLevelCritDamageMod = percentLevelCritDamageMod;
+    }
+
+    public float getFlatAttackSpeed() {
+        return flatAttackSpeed;
+    }
+
+    public void setFlatAttackSpeed(float flatAttackSpeed) {
+        this.flatAttackSpeed = flatAttackSpeed;
+    }
+
+    public float getPercentAttackSpeed() {
+        return percentAttackSpeed;
+    }
+
+    public void setPercentAttackSpeed(float percentAttackSpeed) {
+        this.percentAttackSpeed = percentAttackSpeed;
+    }
+
+    public float getPerLevelAttackSpeed() {
+        return perLevelAttackSpeed;
+    }
+
+    public void setPerLevelAttackSpeed(float perLevelAttackSpeed) {
+        this.perLevelAttackSpeed = perLevelAttackSpeed;
+    }
+
+    public float getPercentLevelAttackSpeed() {
+        return PercentLevelAttackSpeed;
+    }
+
+    public void setPercentLevelAttackSpeed(float percentLevelAttackSpeed) {
+        PercentLevelAttackSpeed = percentLevelAttackSpeed;
+    }
+
+    public float getFlatAttackSpeedRatio() {
+        return flatAttackSpeedRatio;
+    }
+
+    public void setFlatAttackSpeedRatio(float flatAttackSpeedRatio) {
+        this.flatAttackSpeedRatio = flatAttackSpeedRatio;
+    }
+
+    public float getPercentAttackSpeedRatio() {
+        return percentAttackSpeedRatio;
+    }
+
+    public void setPercentAttackSpeedRatio(float percentAttackSpeedRatio) {
+        this.percentAttackSpeedRatio = percentAttackSpeedRatio;
+    }
+
+    public float getPerLevelAttackSpeedRatio() {
+        return perLevelAttackSpeedRatio;
+    }
+
+    public void setPerLevelAttackSpeedRatio(float perLevelAttackSpeedRatio) {
+        this.perLevelAttackSpeedRatio = perLevelAttackSpeedRatio;
+    }
+
+    public float getPercentLevelAttackSpeedRatio() {
+        return PercentLevelAttackSpeedRatio;
+    }
+
+    public void setPercentLevelAttackSpeedRatio(float percentLevelAttackSpeedRatio) {
+        PercentLevelAttackSpeedRatio = percentLevelAttackSpeedRatio;
+    }
+
+    public float getFlatAttackRange() {
+        return flatAttackRange;
+    }
+
+    public void setFlatAttackRange(float flatAttackRange) {
+        this.flatAttackRange = flatAttackRange;
+    }
+
+    public float getPercentAttackRange() {
+        return percentAttackRange;
+    }
+
+    public void setPercentAttackRange(float percentAttackRange) {
+        this.percentAttackRange = percentAttackRange;
+    }
+
+    public float getPerLevelAttackRange() {
+        return perLevelAttackRange;
+    }
+
+    public void setPerLevelAttackRange(float perLevelAttackRange) {
+        this.perLevelAttackRange = perLevelAttackRange;
+    }
+
+    public float getPercentLevelAttackRange() {
+        return PercentLevelAttackRange;
+    }
+
+    public void setPercentLevelAttackRange(float percentLevelAttackRange) {
+        PercentLevelAttackRange = percentLevelAttackRange;
     }
 
     @Override
     public String toString() {
         return "ChampionStats{" +
-                "championName=" + champion.getChampionName() +
                 ", flatHP=" + flatHP +
                 ", percentHP=" + percentHP +
                 ", perLevelHP=" + perLevelHP +
@@ -285,423 +727,6 @@ public class ChampionStats {
                 '}';
     }
 
-    public int getFlatHP() {
-        return flatHP;
-    }
 
-    public void setFlatHP(int flatHP) {
-        this.flatHP = flatHP;
-    }
 
-    public int getChampionId() {
-        return champion.getChampionId();
-    }
-
-    public int getPercentHP() {
-        return percentHP;
-    }
-
-    public void setPercentHP(int percentHP) {
-        this.percentHP = percentHP;
-    }
-
-    public int getPerLevelHP() {
-        return perLevelHP;
-    }
-
-    public void setPerLevelHP(int perLevelHP) {
-        this.perLevelHP = perLevelHP;
-    }
-
-    public int getFlatHpRegen() {
-        return flatHpRegen;
-    }
-
-    public void setFlatHpRegen(int flatHpRegen) {
-        this.flatHpRegen = flatHpRegen;
-    }
-
-    public int getPercentLevelHP() {
-        return PercentLevelHP;
-    }
-
-    public void setPercentLevelHP(int percentLevelHP) {
-        PercentLevelHP = percentLevelHP;
-    }
-
-    public int getPercentHpRegen() {
-        return percentHpRegen;
-    }
-
-    public void setPercentHpRegen(int percentHpRegen) {
-        this.percentHpRegen = percentHpRegen;
-    }
-
-    public int getPerLevelHpRegen() {
-        return perLevelHpRegen;
-    }
-
-    public void setPerLevelHpRegen(int perLevelHpRegen) {
-        this.perLevelHpRegen = perLevelHpRegen;
-    }
-
-    public int getPercentLevelHpRegen() {
-        return PercentLevelHpRegen;
-    }
-
-    public void setPercentLevelHpRegen(int percentLevelHpRegen) {
-        PercentLevelHpRegen = percentLevelHpRegen;
-    }
-
-    public int getFlatMana() {
-        return flatMana;
-    }
-
-    public void setFlatMana(int flatMana) {
-        this.flatMana = flatMana;
-    }
-
-    public int getPercentMana() {
-        return percentMana;
-    }
-
-    public void setPercentMana(int percentMana) {
-        this.percentMana = percentMana;
-    }
-
-    public int getPerLevelMana() {
-        return perLevelMana;
-    }
-
-    public void setPerLevelMana(int perLevelMana) {
-        this.perLevelMana = perLevelMana;
-    }
-
-    public int getPercentLevelMana() {
-        return PercentLevelMana;
-    }
-
-    public void setPercentLevelMana(int percentLevelMana) {
-        PercentLevelMana = percentLevelMana;
-    }
-
-    public int getFlatManaRegen() {
-        return flatManaRegen;
-    }
-
-    public void setFlatManaRegen(int flatManaRegen) {
-        this.flatManaRegen = flatManaRegen;
-    }
-
-    public int getPercentManaRegen() {
-        return percentManaRegen;
-    }
-
-    public void setPercentManaRegen(int percentManaRegen) {
-        this.percentManaRegen = percentManaRegen;
-    }
-
-    public int getPerLevelManaRegen() {
-        return perLevelManaRegen;
-    }
-
-    public void setPerLevelManaRegen(int perLevelManaRegen) {
-        this.perLevelManaRegen = perLevelManaRegen;
-    }
-
-    public int getPercentLevelManaRegen() {
-        return PercentLevelManaRegen;
-    }
-
-    public void setPercentLevelManaRegen(int percentLevelManaRegen) {
-        PercentLevelManaRegen = percentLevelManaRegen;
-    }
-
-    public int getFlatArmour() {
-        return flatArmour;
-    }
-
-    public void setFlatArmour(int flatArmour) {
-        this.flatArmour = flatArmour;
-    }
-
-    public int getPercentArmour() {
-        return percentArmour;
-    }
-
-    public void setPercentArmour(int percentArmour) {
-        this.percentArmour = percentArmour;
-    }
-
-    public int getPerLevelArmour() {
-        return perLevelArmour;
-    }
-
-    public void setPerLevelArmour(int perLevelArmour) {
-        this.perLevelArmour = perLevelArmour;
-    }
-
-    public int getFlatMagicResistance() {
-        return flatMagicResistance;
-    }
-
-    public void setFlatMagicResistance(int flatMagicResistance) {
-        this.flatMagicResistance = flatMagicResistance;
-    }
-
-    public int getPercentLevelArmour() {
-        return PercentLevelArmour;
-    }
-
-    public void setPercentLevelArmour(int percentLevelArmour) {
-        PercentLevelArmour = percentLevelArmour;
-    }
-
-    public int getPercentMagicResistance() {
-        return percentMagicResistance;
-    }
-
-    public void setPercentMagicResistance(int percentMagicResistance) {
-        this.percentMagicResistance = percentMagicResistance;
-    }
-
-    public int getPerLevelMagicResistance() {
-        return perLevelMagicResistance;
-    }
-
-    public void setPerLevelMagicResistance(int perLevelMagicResistance) {
-        this.perLevelMagicResistance = perLevelMagicResistance;
-    }
-
-    public int getPercentLevelMagicResistance() {
-        return PercentLevelMagicResistance;
-    }
-
-    public void setPercentLevelMagicResistance(int percentLevelMagicResistance) {
-        PercentLevelMagicResistance = percentLevelMagicResistance;
-    }
-
-    public int getFlatAttackDamage() {
-        return flatAttackDamage;
-    }
-
-    public void setFlatAttackDamage(int flatAttackDamage) {
-        this.flatAttackDamage = flatAttackDamage;
-    }
-
-    public int getPercentAttackDamage() {
-        return percentAttackDamage;
-    }
-
-    public void setPercentAttackDamage(int percentAttackDamage) {
-        this.percentAttackDamage = percentAttackDamage;
-    }
-
-    public int getPerLevelAttackDamage() {
-        return perLevelAttackDamage;
-    }
-
-    public void setPerLevelAttackDamage(int perLevelAttackDamage) {
-        this.perLevelAttackDamage = perLevelAttackDamage;
-    }
-
-    public int getPercentLevelAttackDamage() {
-        return PercentLevelAttackDamage;
-    }
-
-    public void setPercentLevelAttackDamage(int percentLevelAttackDamage) {
-        PercentLevelAttackDamage = percentLevelAttackDamage;
-    }
-
-    public int getFlatMovementSpeed() {
-        return flatMovementSpeed;
-    }
-
-    public void setFlatMovementSpeed(int flatMovementSpeed) {
-        this.flatMovementSpeed = flatMovementSpeed;
-    }
-
-    public int getPercentMovementSpeed() {
-        return percentMovementSpeed;
-    }
-
-    public void setPercentMovementSpeed(int percentMovementSpeed) {
-        this.percentMovementSpeed = percentMovementSpeed;
-    }
-
-    public int getPerLevelMovementSpeed() {
-        return perLevelMovementSpeed;
-    }
-
-    public void setPerLevelMovementSpeed(int perLevelMovementSpeed) {
-        this.perLevelMovementSpeed = perLevelMovementSpeed;
-    }
-
-    public int getPercentLevelMovementSpeed() {
-        return PercentLevelMovementSpeed;
-    }
-
-    public void setPercentLevelMovementSpeed(int percentLevelMovementSpeed) {
-        PercentLevelMovementSpeed = percentLevelMovementSpeed;
-    }
-
-    public int getFlatCritDamage() {
-        return flatCritDamage;
-    }
-
-    public void setFlatCritDamage(int flatCritDamage) {
-        this.flatCritDamage = flatCritDamage;
-    }
-
-    public int getPercentCritDamage() {
-        return percentCritDamage;
-    }
-
-    public void setPercentCritDamage(int percentCritDamage) {
-        this.percentCritDamage = percentCritDamage;
-    }
-
-    public int getPerLevelCritDamage() {
-        return perLevelCritDamage;
-    }
-
-    public void setPerLevelCritDamage(int perLevelCritDamage) {
-        this.perLevelCritDamage = perLevelCritDamage;
-    }
-
-    public int getPercentLevelCritDamage() {
-        return PercentLevelCritDamage;
-    }
-
-    public void setPercentLevelCritDamage(int percentLevelCritDamage) {
-        PercentLevelCritDamage = percentLevelCritDamage;
-    }
-
-    public int getFlatCritDamageMod() {
-        return flatCritDamageMod;
-    }
-
-    public void setFlatCritDamageMod(int flatCritDamageMod) {
-        this.flatCritDamageMod = flatCritDamageMod;
-    }
-
-    public int getPercentCritDamageMod() {
-        return percentCritDamageMod;
-    }
-
-    public void setPercentCritDamageMod(int percentCritDamageMod) {
-        this.percentCritDamageMod = percentCritDamageMod;
-    }
-
-    public int getPerLevelCritDamageMod() {
-        return perLevelCritDamageMod;
-    }
-
-    public void setPerLevelCritDamageMod(int perLevelCritDamageMod) {
-        this.perLevelCritDamageMod = perLevelCritDamageMod;
-    }
-
-    public int getPercentLevelCritDamageMod() {
-        return PercentLevelCritDamageMod;
-    }
-
-    public void setPercentLevelCritDamageMod(int percentLevelCritDamageMod) {
-        PercentLevelCritDamageMod = percentLevelCritDamageMod;
-    }
-
-    public int getFlatAttackSpeed() {
-        return flatAttackSpeed;
-    }
-
-    public void setFlatAttackSpeed(int flatAttackSpeed) {
-        this.flatAttackSpeed = flatAttackSpeed;
-    }
-
-    public int getPercentAttackSpeed() {
-        return percentAttackSpeed;
-    }
-
-    public void setPercentAttackSpeed(int percentAttackSpeed) {
-        this.percentAttackSpeed = percentAttackSpeed;
-    }
-
-    public int getPerLevelAttackSpeed() {
-        return perLevelAttackSpeed;
-    }
-
-    public void setPerLevelAttackSpeed(int perLevelAttackSpeed) {
-        this.perLevelAttackSpeed = perLevelAttackSpeed;
-    }
-
-    public int getPercentLevelAttackSpeed() {
-        return PercentLevelAttackSpeed;
-    }
-
-    public void setPercentLevelAttackSpeed(int percentLevelAttackSpeed) {
-        PercentLevelAttackSpeed = percentLevelAttackSpeed;
-    }
-
-    public int getFlatAttackSpeedRatio() {
-        return flatAttackSpeedRatio;
-    }
-
-    public void setFlatAttackSpeedRatio(int flatAttackSpeedRatio) {
-        this.flatAttackSpeedRatio = flatAttackSpeedRatio;
-    }
-
-    public int getPerLevelAttackSpeedRatio() {
-        return perLevelAttackSpeedRatio;
-    }
-
-    public void setPerLevelAttackSpeedRatio(int perLevelAttackSpeedRatio) {
-        this.perLevelAttackSpeedRatio = perLevelAttackSpeedRatio;
-    }
-
-    public int getPercentAttackSpeedRatio() {
-        return percentAttackSpeedRatio;
-    }
-
-    public void setPercentAttackSpeedRatio(int percentAttackSpeedRatio) {
-        this.percentAttackSpeedRatio = percentAttackSpeedRatio;
-    }
-
-    public int getPercentLevelAttackSpeedRatio() {
-        return PercentLevelAttackSpeedRatio;
-    }
-
-    public void setPercentLevelAttackSpeedRatio(int percentLevelAttackSpeedRatio) {
-        PercentLevelAttackSpeedRatio = percentLevelAttackSpeedRatio;
-    }
-
-    public int getFlatAttackRange() {
-        return flatAttackRange;
-    }
-
-    public void setFlatAttackRange(int flatAttackRange) {
-        this.flatAttackRange = flatAttackRange;
-    }
-
-    public int getPercentAttackRange() {
-        return percentAttackRange;
-    }
-
-    public void setPercentAttackRange(int percentAttackRange) {
-        this.percentAttackRange = percentAttackRange;
-    }
-
-    public int getPerLevelAttackRange() {
-        return perLevelAttackRange;
-    }
-
-    public void setPerLevelAttackRange(int perLevelAttackRange) {
-        this.perLevelAttackRange = perLevelAttackRange;
-    }
-
-    public int getPercentLevelAttackRange() {
-        return PercentLevelAttackRange;
-    }
-
-    public void setPercentLevelAttackRange(int percentLevelAttackRange) {
-        PercentLevelAttackRange = percentLevelAttackRange;
-    }
 }
