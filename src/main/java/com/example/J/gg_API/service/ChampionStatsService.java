@@ -122,7 +122,7 @@ public class ChampionStatsService {
 
     public void resetChampionStatIDs() throws IOException, InterruptedException {
         System.out.println("resetChampionStatIDs");
-        championStatsRepository.deleteAll();
+        championStatsRepository.resetChampStatIDs();
     }
 
 

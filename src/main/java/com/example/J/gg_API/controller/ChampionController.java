@@ -57,6 +57,7 @@ public class ChampionController {
         championService.resetChampIDs();
 
         championStatsService.clearChampionStats();
+        championStatsService.resetChampionStatIDs();
 
 
     }
