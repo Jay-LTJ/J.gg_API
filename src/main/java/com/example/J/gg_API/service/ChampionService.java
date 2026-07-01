@@ -58,7 +58,7 @@ public class ChampionService {
         saveChampionList(championList);
 
         List<ChampionStats> championStatsList = championStatsService.lolJsonToChampStats(championJson,championList);
-        //championStatsService.saveStatList(championStatsList);
+        championStatsService.saveStatList(championStatsList);
 
 //        Set<String> positionSet = positionsService.jsonToPositionSet(championJson);
 //        List<positions> positionList = positionsService.positionSetToList(positionSet);
