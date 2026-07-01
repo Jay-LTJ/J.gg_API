@@ -10,6 +10,7 @@ public class Champion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="champid")
     private int championId;
 
     @Column(name = "champname")

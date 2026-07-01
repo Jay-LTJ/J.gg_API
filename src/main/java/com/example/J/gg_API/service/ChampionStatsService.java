@@ -93,7 +93,7 @@ public class ChampionStatsService {
                     championJson.get("stats").get("attackRange").get("percentPerLevel").asFloat(),
                     champ
             );
-
+            System.out.println(champ.getChampionId());
             statList.add(stats);
 
         }

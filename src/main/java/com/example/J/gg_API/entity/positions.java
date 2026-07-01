@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "position")
+@Table(name = "positions")
 public class positions {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
