@@ -3,6 +3,7 @@ package com.example.J.gg_API.service;
 import com.example.J.gg_API.entity.version;
 import com.example.J.gg_API.externalApi.communityDragonConnection;
 import com.example.J.gg_API.repositories.versionRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -11,13 +12,13 @@ import java.util.List;
 @Service
 public class VersionService {
 
-    private final versionRepository versionRepository;
-    private final communityDragonConnection dragonConnection;
+    @Autowired
+    private versionRepository versionRepository;
 
-    public VersionService(versionRepository versionRepository, communityDragonConnection dragonConnection) {
-        this.versionRepository = versionRepository;
-        this.dragonConnection = dragonConnection;
-    }
+    @Autowired
+    private communityDragonConnection dragonConnection;
+
+
 
     public boolean versionCheck() throws IOException, InterruptedException {
         System.out.println("versionCheck");

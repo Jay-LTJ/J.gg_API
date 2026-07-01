@@ -4,6 +4,7 @@ package com.example.J.gg_API.service;
 import com.example.J.gg_API.entity.Champion;
 import com.example.J.gg_API.entity.ChampionStats;
 import com.example.J.gg_API.repositories.championStatsRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tools.jackson.databind.JsonNode;
 
@@ -14,11 +15,10 @@ import java.util.List;
 @Service
 public class ChampionStatsService {
 
-    private final championStatsRepository championStatsRepository;
+    @Autowired
+    private championStatsRepository championStatsRepository;
 
-    public ChampionStatsService(championStatsRepository championStatsRepository) {
-        this.championStatsRepository = championStatsRepository;
-    }
+
 
 
     public List<ChampionStats> lolJsonToChampStats(JsonNode championListJson, List<Champion> championList){
@@ -118,6 +118,11 @@ public class ChampionStatsService {
         }
 
 
+    }
+
+    public void resetChampionStatIDs() throws IOException, InterruptedException {
+        System.out.println("resetChampionStatIDs");
+        championStatsRepository.deleteAll();
     }
 
 

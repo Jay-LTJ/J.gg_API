@@ -3,6 +3,7 @@ package com.example.J.gg_API.service;
 
 import com.example.J.gg_API.entity.positions;
 import com.example.J.gg_API.repositories.positionsRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tools.jackson.databind.JsonNode;
 
@@ -15,11 +16,10 @@ import java.util.Set;
 @Service
 public class PositionsService {
 
-    private final positionsRepository positionsRepository;
+    @Autowired
+    private positionsRepository positionsRepository;
 
-    public PositionsService(positionsRepository positionsRepository) {
-        this.positionsRepository = positionsRepository;
-    }
+
 
 
     public Set<String> jsonToPositionSet(JsonNode championJson){

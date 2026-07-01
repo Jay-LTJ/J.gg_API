@@ -5,6 +5,7 @@ import com.example.J.gg_API.entity.*;
 import com.example.J.gg_API.externalApi.LolStaticDataConnection;
 import com.example.J.gg_API.repositories.championRepository;
 import com.example.J.gg_API.repositories.championStatsRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tools.jackson.databind.JsonNode;
 
@@ -16,30 +17,27 @@ import java.util.Set;
 @Service
 public class ChampionService {
 
-    private static ChampionList champions;
-    private final LolStaticDataConnection lolStaticDataConnection;
-    private final VersionService versionService;
-    private final championRepository championRepository;
-    private final ChampionStatsService championStatsService;
-    private final PositionsService positionsService;
-    private final RolesService rolesService;
+    @Autowired
+    private  LolStaticDataConnection lolStaticDataConnection;
 
-    public ChampionService(LolStaticDataConnection lolStaticDataConnection, VersionService versionService, championRepository championRepository, ChampionStatsService championStatsService, PositionsService positionsService, RolesService rolesService) {
-        this.championStatsService = championStatsService;
-        this.positionsService = positionsService;
-        this.rolesService = rolesService;
-        this.lolStaticDataConnection = new LolStaticDataConnection();
-        this.versionService = versionService;
-        this.championRepository = championRepository;
-    }
+    @Autowired
+    private  VersionService versionService;
 
-    public ChampionList getAllChampions() throws IOException, InterruptedException {
-        System.out.println("getAllChampions");
-        JsonNode championJson = lolStaticDataConnection.getChampionListJson();
+    @Autowired
+    private  championRepository championRepository;
+
+    @Autowired
+    private  ChampionStatsService championStatsService;
+
+    @Autowired
+    private  PositionsService positionsService;
+
+    @Autowired
+    private RolesService rolesService;
 
 
-        return champions;
-    }
+
+
 
     public void getItems() throws IOException, InterruptedException {
         System.out.println("getItems");
@@ -59,9 +57,9 @@ public class ChampionService {
 
         saveChampionList(championList);
 
-//        List<ChampionStats> championStatsList = championStatsService.lolJsonToChampStats(championJson,championList);
-//        championStatsService.saveStatList(championStatsList);
-//
+        List<ChampionStats> championStatsList = championStatsService.lolJsonToChampStats(championJson,championList);
+        championStatsService.saveStatList(championStatsList);
+
 //        Set<String> positionSet = positionsService.jsonToPositionSet(championJson);
 //        List<positions> positionList = positionsService.positionSetToList(positionSet);
 //        positionsService.savePositionList(positionList);

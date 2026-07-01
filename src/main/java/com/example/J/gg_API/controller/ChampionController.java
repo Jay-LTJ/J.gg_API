@@ -30,11 +30,11 @@ public class ChampionController {
     @Autowired
     private RolesService rolesService;
 
-    @GetMapping("/")
-    public ChampionList getAllChampions() throws IOException, InterruptedException {
-
-        return championService.getAllChampions();
-    }
+//    @GetMapping("/")
+//    public ChampionList getAllChampions() throws IOException, InterruptedException {
+//
+//        return championService.getAllChampions();
+//    }
 
     @GetMapping("/update")
     public void updateChampions() throws IOException, InterruptedException {
@@ -52,9 +52,12 @@ public class ChampionController {
     @GetMapping("/clear")
     public void clearChampions() throws IOException, InterruptedException {
         System.out.println("clearChampions");
+
         championService.clearChampions();
-        championStatsService.clearChampionStats();
         championService.resetChampIDs();
+
+        championStatsService.clearChampionStats();
+
 
     }
 
