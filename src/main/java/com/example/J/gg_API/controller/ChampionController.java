@@ -62,6 +62,9 @@ public class ChampionController {
         positionsService.clearPositions();
         positionsService.resetPositionIds();
 
+        rolesService.clearRoles();
+        rolesService.resetRoleIds();
+
 
     }
 

@@ -54,7 +54,6 @@ public class RolesService {
             rolesList.add(temp);
         }
 
-        System.out.println("rolesList: " + rolesList);
         return rolesList;
     }
 
@@ -68,7 +67,11 @@ public class RolesService {
             System.out.println("clearRole error: " + e.getMessage());
         }
 
+    }
 
+    public void resetRoleIds(){
+        System.out.println("resetRoleIds");
+        rolesRepository.resetRoleIDs();
     }
 
 }

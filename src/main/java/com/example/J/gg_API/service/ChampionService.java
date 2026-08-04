@@ -61,10 +61,12 @@ public class ChampionService {
 
         championList = addPositionsToChampionsList(championList,positionList,championJson);
 
-//        Set<String> roleSet = rolesService.jsonToRolesSet(championJson);
-//        List<roles> rolesList = rolesService.rolesSetToList(roleSet);
-//        rolesService.saveRoleList(rolesList);
-//
+        Set<String> roleSet = rolesService.jsonToRolesSet(championJson);
+        List<roles> rolesList = rolesService.rolesSetToList(roleSet);
+        rolesService.saveRoleList(rolesList);
+
+        championList = addRolesToChampionsList(championList,rolesList,championJson);
+
         saveChampionList(championList);
 //
 //        List<ChampionStats> championStatsList = championStatsService.lolJsonToChampStats(championJson,championList);
@@ -90,7 +92,7 @@ public class ChampionService {
 
         for(JsonNode championJson : championListJson){
 
-            System.out.println("championJson: " + championJson);
+
 
             Champion champion = new Champion(championJson.get("name").asString(),
                     championJson.get("title").asString(),
@@ -182,7 +184,7 @@ public class ChampionService {
         System.out.println("addPositionsToChampionsList");
 
         for(JsonNode champ:championJson){
-            System.out.println("championJson: " + champ.get("positions"));
+
             Set<positions> positionSet = new HashSet<>();
 
             for(JsonNode position:champ.get("positions")){
@@ -209,6 +211,35 @@ public class ChampionService {
         return championList;
     }
 
+    public List<Champion> addRolesToChampionsList(List<Champion> championList, List<roles> rolesList , JsonNode championJson){
+        System.out.println("addRolesToChampionsList");
 
+        for(JsonNode champ:championJson){
+
+            Set<roles> rolesSet = new HashSet<>();
+
+            for(JsonNode role:champ.get("roles")){
+
+                for(roles r:rolesList){
+
+                    if(r.getRoleName().equals(role.asString())){
+                       rolesSet.add(r);
+                    }
+
+                }
+            }
+
+            for (Champion champion : championList) {
+
+                if (champion.getChampionName().equals(champ.get("name").asString())) {
+                    champion.setRoles(rolesSet);
+                    break;
+                }
+
+            }
+        }
+
+        return championList;
+    }
 
 }
