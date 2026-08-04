@@ -8,11 +8,11 @@ import com.example.J.gg_API.repositories.championStatsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tools.jackson.databind.JsonNode;
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.node.ArrayNode;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Service
 public class ChampionService {
@@ -55,18 +55,26 @@ public class ChampionService {
 
         List<Champion> championList = lolJsonToChampList(championJson);
 
-        saveChampionList(championList);
+        Set<String> positionSet = positionsService.jsonToPositionSet(championJson);
+        List<positions> positionList = positionsService.positionSetToList(positionSet);
+        positionsService.savePositionList(positionList);
 
-        List<ChampionStats> championStatsList = championStatsService.lolJsonToChampStats(championJson,championList);
-        championStatsService.saveStatList(championStatsList);
+        championList = addPositionsToChampionsList(championList,positionList,championJson);
 
-//        Set<String> positionSet = positionsService.jsonToPositionSet(championJson);
-//        List<positions> positionList = positionsService.positionSetToList(positionSet);
-//        positionsService.savePositionList(positionList);
-//
 //        Set<String> roleSet = rolesService.jsonToRolesSet(championJson);
 //        List<roles> rolesList = rolesService.rolesSetToList(roleSet);
 //        rolesService.saveRoleList(rolesList);
+//
+        saveChampionList(championList);
+//
+//        List<ChampionStats> championStatsList = championStatsService.lolJsonToChampStats(championJson,championList);
+//        championStatsService.saveStatList(championStatsList);
+
+
+
+
+
+        
 
 
 
@@ -168,6 +176,37 @@ public class ChampionService {
     public void resetChampIDs() throws IOException, InterruptedException {
         System.out.println("resetChampIDs");
         championRepository.resetChampIDs();
+    }
+
+    public List<Champion> addPositionsToChampionsList(List<Champion> championList, List<positions> positionsList , JsonNode championJson) throws IOException, InterruptedException {
+        System.out.println("addPositionsToChampionsList");
+
+        for(JsonNode champ:championJson){
+            System.out.println("championJson: " + champ.get("positions"));
+            Set<positions> positionSet = new HashSet<>();
+
+            for(JsonNode position:champ.get("positions")){
+
+                for(positions p:positionsList){
+
+                    if(p.getPositionName().equals(position.asString())){
+                        positionSet.add(p);
+                    }
+
+                }
+            }
+
+            for (Champion champion : championList) {
+
+                if (champion.getChampionName().equals(champ.get("name").asString())) {
+                    champion.setPositionList(positionSet);
+                    break;
+                }
+
+            }
+        }
+
+        return championList;
     }
 
 

@@ -71,4 +71,9 @@ public class PositionsService {
 
     }
 
+    public void resetPositionIds(){
+        System.out.println("resetPositionIds");
+        positionsRepository.resetPositionIDs();
+    }
+
 }

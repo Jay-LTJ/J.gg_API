@@ -132,6 +132,22 @@ public class Champion {
         this.championAdaptiveType = championAdaptiveType;
     }
 
+    public Set<roles> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<roles> roles) {
+        this.roles = roles;
+    }
+
+    public Set<positions> getPositionList() {
+        return positionList;
+    }
+
+    public void setPositionList(Set<positions> positionList) {
+        this.positionList = positionList;
+    }
+
     @Override
     public String toString() {
         return "Champion{" +
