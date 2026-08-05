@@ -36,9 +36,6 @@ public class ChampionService {
     private RolesService rolesService;
 
 
-
-
-
     public void getItems() throws IOException, InterruptedException {
         System.out.println("getItems");
         JsonNode temp = lolStaticDataConnection.getItemListJson();
@@ -68,19 +65,9 @@ public class ChampionService {
         championList = addRolesToChampionsList(championList,rolesList,championJson);
 
         saveChampionList(championList);
-//
-//        List<ChampionStats> championStatsList = championStatsService.lolJsonToChampStats(championJson,championList);
-//        championStatsService.saveStatList(championStatsList);
 
-
-
-
-
-        
-
-
-
-
+        List<ChampionStats> championStatsList = championStatsService.lolJsonToChampStats(championJson,championList);
+        championStatsService.saveStatList(championStatsList);
 
     }
 
@@ -89,10 +76,7 @@ public class ChampionService {
 
         List<Champion> championList = new ArrayList<>();
 
-
         for(JsonNode championJson : championListJson){
-
-
 
             Champion champion = new Champion(championJson.get("name").asString(),
                     championJson.get("title").asString(),
@@ -104,27 +88,6 @@ public class ChampionService {
             );
 
             championList.add(champion);
-
-
-            //positionsList.add(championJson.get("positions").asString());
-
-//            for(int i = 0 ;  i < championJson.get("roles").size(); i++){
-//
-//                rolesList.add(championJson.get("roles").get(i).asString());
-//
-//            }
-
-
-
-
-
-
-
-//            for(roles currentRole : rolesList){
-//
-//            }
-
-
 
         }
 
@@ -150,29 +113,25 @@ public class ChampionService {
         for(JsonNode championJson : championListJson){
 
             System.out.println("championJson: " + championJson);
-
             System.out.println("championStatsList: " + championJson.get("stats").get("health").get("flat").asString());
 
-
-
         }
-
-
         return championStatsList;
-
     }
 
     public  void clearChampions() throws IOException, InterruptedException {
         System.out.println("clearChampions");
 
         try{
+
             championRepository.deleteAll();
             System.out.println("champion table cleared");
+
         }catch(Exception e){
+
             System.out.println("clearChampions error: " + e.getMessage());
+
         }
-
-
     }
 
     public void resetChampIDs() throws IOException, InterruptedException {
@@ -188,13 +147,11 @@ public class ChampionService {
             Set<positions> positionSet = new HashSet<>();
 
             for(JsonNode position:champ.get("positions")){
-
                 for(positions p:positionsList){
 
                     if(p.getPositionName().equals(position.asString())){
                         positionSet.add(p);
                     }
-
                 }
             }
 
@@ -207,7 +164,6 @@ public class ChampionService {
 
             }
         }
-
         return championList;
     }
 
@@ -238,8 +194,6 @@ public class ChampionService {
 
             }
         }
-
         return championList;
     }
-
 }

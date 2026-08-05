@@ -24,7 +24,6 @@ public class roles {
 
     public roles(String roleName) {
         this.roleName = roleName;
-
     }
 
     public int getRoleId() {

@@ -18,9 +18,6 @@ public class ChampionStatsService {
     @Autowired
     private championStatsRepository championStatsRepository;
 
-
-
-
     public List<ChampionStats> lolJsonToChampStats(JsonNode championListJson, List<Champion> championList){
         System.out.println("lolJsonToChampStats");
 
@@ -124,6 +121,5 @@ public class ChampionStatsService {
         System.out.println("resetChampionStatIDs");
         championStatsRepository.resetChampStatIDs();
     }
-
 
 }

@@ -20,8 +20,6 @@ public class RolesService {
     private rolesRepository rolesRepository;
 
 
-
-
     public Set<String> jsonToRolesSet(JsonNode championJson){
         System.out.print("JsonToRolesSet");
         Set<String> roles = new HashSet<String>();
@@ -35,7 +33,6 @@ public class RolesService {
         }
 
         System.out.println("roles: " + roles);
-
         return roles;
     }
 

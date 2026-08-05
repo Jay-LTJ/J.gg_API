@@ -50,9 +50,6 @@ public class Champion {
     )
     Set<positions> positionList = new HashSet<positions>();
 
-
-
-
     public Champion() {}
 
     public Champion(String championName, String championTitle, String championFullName, String championIcon, String championResource,String championAttackType, String championAdaptiveType) {
@@ -65,8 +62,6 @@ public class Champion {
         this.championAdaptiveType = championAdaptiveType;
 
     }
-
-
 
     public int getChampionId() {
         return championId;

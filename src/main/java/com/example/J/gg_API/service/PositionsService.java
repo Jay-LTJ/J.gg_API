@@ -20,8 +20,6 @@ public class PositionsService {
     private positionsRepository positionsRepository;
 
 
-
-
     public Set<String> jsonToPositionSet(JsonNode championJson){
         System.out.print("JsonToPositionSet");
         Set<String> positions = new HashSet<String>();
@@ -33,9 +31,6 @@ public class PositionsService {
             }
 
         }
-
-        System.out.println("positions: " + positions);
-
         return positions;
     }
 
@@ -52,8 +47,6 @@ public class PositionsService {
             positions temp = new positions(position);
             positionsList.add(temp);
         }
-
-        System.out.println("positionsList: " + positionsList);
         return positionsList;
 
     }

@@ -174,8 +174,6 @@ public class ChampionStats {
 
     public ChampionStats() {}
 
-
-
     public ChampionStats(float flatHP, float percentHP, float perLevelHP, float percentLevelHP, float flatHpRegen, float percentHpRegen, float perLevelHpRegen, float percentLevelHpRegen, float flatMana, float percentMana, float perLevelMana, float percentLevelMana, float flatManaRegen, float percentManaRegen, float perLevelManaRegen, float percentLevelManaRegen, float flatArmour, float percentArmour, float perLevelArmour, float percentLevelArmour, float flatMagicResistance, float percentMagicResistance, float perLevelMagicResistance, float percentLevelMagicResistance, float flatAttackDamage, float percentAttackDamage, float perLevelAttackDamage, float percentLevelAttackDamage, float flatMovementSpeed, float percentMovementSpeed, float perLevelMovementSpeed, float percentLevelMovementSpeed, float flatCritDamage, float percentCritDamage, float perLevelCritDamage, float percentLevelCritDamage, float flatCritDamageMod, float percentCritDamageMod, float perLevelCritDamageMod, float percentLevelCritDamageMod, float flatAttackSpeed, float percentAttackSpeed, float perLevelAttackSpeed, float percentLevelAttackSpeed, float flatAttackSpeedRatio, float percentAttackSpeedRatio, float perLevelAttackSpeedRatio, float percentLevelAttackSpeedRatio, float flatAttackRange, float percentAttackRange, float perLevelAttackRange, float percentLevelAttackRange, Champion champion) {
 
         this.flatHP = flatHP;
@@ -726,7 +724,5 @@ public class ChampionStats {
                 ", PercentLevelAttackRange=" + PercentLevelAttackRange +
                 '}';
     }
-
-
 
 }

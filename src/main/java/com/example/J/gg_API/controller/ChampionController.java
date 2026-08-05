@@ -43,14 +43,15 @@ public class ChampionController {
     }
 
     @GetMapping("/set")
-    public void setChampions() throws IOException, InterruptedException {
+    public String setChampions() throws IOException, InterruptedException {
         System.out.println("setChampions");
 
         championService.setChampionsDb();
+        return "success Set Database";
     }
 
     @GetMapping("/clear")
-    public void clearChampions() throws IOException, InterruptedException {
+    public String clearChampions() throws IOException, InterruptedException {
         System.out.println("clearChampions");
 
         championService.clearChampions();
@@ -65,7 +66,7 @@ public class ChampionController {
         rolesService.clearRoles();
         rolesService.resetRoleIds();
 
-
+        return "success: Cleared Champions";
     }
 
     @GetMapping("test")
